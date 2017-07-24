@@ -44,7 +44,7 @@ class Experience{
 		$experience_id = input('post.experience_id');
 
 		$EA = db('experience_answer');
-		$emap['experience_id'] = $experience_id;
+		$emap['experience_id'] = 3;
 		$emap['experience_answer'] = $experience_answer;
 		$emap['user_id'] = $exp_user_id;
 		$emap['create_date'] = date('Y-m-d G:i:s');
