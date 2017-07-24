@@ -44,9 +44,9 @@ class Experience{
 		$experience_id = input('post.experience_id');
 
 		$EA = db('experience_answer');
-		$emap['experience_id'] = 3;
-		$emap['experience_answer'] = 15;
-		$emap['user_id'] = 21;
+		$emap['experience_id'] = $experience_id;
+		$emap['answer_content'] = $experience_answer;
+		$emap['user_id'] = $exp_user_id;
 		$emap['create_date'] = date('Y-m-d G:i:s');
 		$EA->insert($emap);
 
