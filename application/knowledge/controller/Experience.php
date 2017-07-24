@@ -46,15 +46,9 @@ class Experience{
 		$emap['user_id'] = $exp_user_id;
 		$emap['type'] = $type;
         $emap['create_date'] = date('Y-m-d G:i:s');
+		$emap['answer'] = $answer;
         $Experience->insert($emap);
 		
-        $Experience_list = $Experience->where($emap['create_date'])->find();
-		$Ex_Answer = db('experience_answer');
-		$emap1['answer'] = $answer;
-		$emap1['user_id'] = $exp_user_id;
-		$emap1['experience_id'] = 2;
-        $emap1['create_date'] = date('Y-m-d G:i:s');
-		$Ex_Answer->insert($emap1);
         $result['err_code'] = 0;
         $result['err_msg'] = 'ok';
         return json_encode($result);
@@ -62,6 +56,15 @@ class Experience{
     //删除经验
 	public function delete()
 	{
+		$Ex_Answer = db('experience_answer');
+		$emap['answer_content'] = 123;
+		$emap['user_id'] = 11;
+		$emap['experience_id'] = 2;
+        $emap['create_date'] = date('Y-m-d G:i:s');
+		$Ex_Answer->insert($emap);
 		
+        $result['err_code'] = 0;
+        $result['err_msg'] = 'ok';
+        return json_encode($result);
 	}
 }
