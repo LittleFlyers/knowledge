@@ -29,9 +29,9 @@ class Dictionary{
 	//向词典中添加词条
 	public function add()
 	{
-		$word = input(post.word);
-		$type = input(post.type);
-		$explain = input(post.explain);
+		$word = input('post.word');
+		$type = input('post.type');
+		$explain = input('post.explain');
 
 		$Dw = db('dictionary');
 		$emap['word'] = $word;
