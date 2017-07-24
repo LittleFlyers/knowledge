@@ -34,7 +34,23 @@ class Consult{
     //添加咨询
 	public function add()
 	{
-		
+		$access_token = input('post.access_token');
+        $user_id = get_user_id_by_access_token($access_token);
+		$type = input('post.type');
+		$consult_title = input('post.consult');
+
+		$Consult = db('consult');
+		$emap['user_id'] = $user_id;
+		$emap['type'] = $type;
+		$emap['consult_title'] = $consult_title;
+		$emap['create_date'] = date('Y-m-d G:i:s');
+		$Consult->insert($emap);
+
+		$result['err_code'] = 0;
+        $result['err_msg'] = 'ok';
+        return json_encode($result);
+
+
 	}
 	//回答咨询
 	public function answer()
