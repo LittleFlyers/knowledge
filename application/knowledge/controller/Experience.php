@@ -29,7 +29,22 @@ class Experience{
 	//回答经验
 	public function answer()
 	{
-		
+		$access_token = input('post.access_token');
+        $exp_user_id = get_user_id_by_access_token($access_token);
+		$experience_answer = input('post.experience_answer');
+		$experience_id = input('post.experience_id');
+
+		$EA = db('experience_answer');
+		$emap['experience_id'] = $experience_id;
+		$emap['experience_answer'] = $experience_answer;
+		$emap['user_id'] = $exp_user_id;
+		$emap['create_date'] = date('Y-m-d G:i:s');
+		$EA->insert($emap);
+
+		$result['err_code'] = 0;
+        $result['err_msg'] = 'ok';
+        return json_encode($result);
+
 	}
 	//添加经验
 	public function add()
@@ -48,13 +63,6 @@ class Experience{
         $emap['create_date'] = date('Y-m-d G:i:s');
         $Experience->insert($emap);
 		
-        $Experience_list = $Experience->where($emap['create_date'])->find();
-		$Ex_Answer = db('experience_answer');
-		$emap1['answer'] = $answer;
-		$emap1['user_id'] = $exp_user_id;
-		$emap1['experience_id'] = 2;
-        $emap1['create_date'] = date('Y-m-d G:i:s');
-		$Ex_Answer->insert($emap1);
         $result['err_code'] = 0;
         $result['err_msg'] = 'ok';
         return json_encode($result);
