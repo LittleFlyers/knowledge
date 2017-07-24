@@ -29,7 +29,21 @@ class Experience{
 	//回答经验
 	public function answer()
 	{
-		
+		$access_token = input('post.access_token');
+        $exp_user_id = get_user_id_by_access_token($access_token);
+		$experience_answer = input('post.experience_answer');
+		$experience_id = input('post.experience_id');
+
+		$EA = db('experience_answer');
+		$emap['experience_id'] = $experience_id;
+		$emap['experience_answer'] = $experience_answer;
+		$emap['user_id'] = $exp_user_id;
+		$emap['create_date'] = date('Y-m-d G:i:s');
+		$EA->insert($emap);
+
+		$result['err_code'] = 0;
+        $result['err_msg'] = 'ok';
+        return json_encode($result);
 	}
 	//添加经验
 	public function add()
@@ -56,15 +70,6 @@ class Experience{
     //删除经验
 	public function delete()
 	{
-		$Ex_Answer = db('experience_answer');
-		$emap['answer_content'] = 123;
-		$emap['user_id'] = 11;
-		$emap['experience_id'] = 2;
-        $emap['create_date'] = date('Y-m-d G:i:s');
-		$Ex_Answer->insert($emap);
-		
-        $result['err_code'] = 0;
-        $result['err_msg'] = 'ok';
-        return json_encode($result);
+	
 	}
 }
