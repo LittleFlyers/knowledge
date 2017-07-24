@@ -1,7 +1,7 @@
 <?php
 namespace app\knowledge\controller;
 
-class Dictionary{
+class Experience{
 	//获取经验的全部信息
 	public function all()
 	{
