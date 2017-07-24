@@ -7,6 +7,7 @@ class Consult{
 	{
         $Consult = db('consult');
         $consult_list = $Consult->select();
+		if($consult_list)
         {
             $result['err_code'] = 0;
             $result['err_msg'] = 'ok';
