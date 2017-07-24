@@ -29,6 +29,18 @@ class Dictionary{
 	//向词典中添加词条
 	public function add()
 	{
+		$word = input(post.word);
+		$type = input(post.type);
+		$explain = input(post.explain);
+
+		$Dw = db('dictionary');
+		$emap['word'] = $word;
+		$emap['explain'] = $explain;
+		$emap['type'] = $type;
+		$Dw->insert($emap);
+		$result['err_code'] = 0;
+        $result['err_msg'] = 'ok';
+        return json_encode($result);
 		
 	}
 	//更新词条
