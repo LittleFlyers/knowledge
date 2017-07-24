@@ -15,11 +15,11 @@ return [
     // 服务器地址
     'hostname'        => '127.0.0.1',
     // 数据库名
-    'database'        => 'human_platform',
+    'database'        => 'human_platform_add',
     // 用户名
     'username'        => 'root',
     // 密码
-    'password'        => 'nmb4rfv8ik,',
+    'password'        => '',
     // 端口
     'hostport'        => '3306',
     // 连接dsn
