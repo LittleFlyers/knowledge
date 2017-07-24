@@ -41,7 +41,7 @@ class Consult{
 
 		$Consult = db('consult');
 		$emap['user_id'] = $user_id;
-		$emap['type'] = $type;
+		$emap['consult_type'] = $type;
 		$emap['consult_title'] = $consult_title;
 		$emap['create_date'] = date('Y-m-d G:i:s');
 		$Consult->insert($emap);
