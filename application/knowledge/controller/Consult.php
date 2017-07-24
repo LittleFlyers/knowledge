@@ -5,12 +5,12 @@ class Consult{
 	//获取咨询中的全部信息
 	public function all()
 	{
-		/*$access_token = input('post.access_token');
-        $user_id = get_user_id_by_access_token($access_token);*/
+		$access_token = input('post.access_token');
+        $user_id = get_user_id_by_access_token($access_token);
 
         $Consult = db('consult');
        // $emap['user_id'] = $user_id;
-        $consult_list = $Consult->where('user_id'=>21);
+        $consult_list = $Consult->where(['user_id'=>$user_id])->select();
 		if($consult_list)
         {
             $result['err_code'] = 0;
