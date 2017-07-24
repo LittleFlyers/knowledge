@@ -34,7 +34,7 @@ class Experience{
         $result['err_msg'] = 'ok';
         $result['data'] = $theData;
 
-        return $result;
+        return json_encode($result);
 	}
 	//回答经验
 	public function answer()
