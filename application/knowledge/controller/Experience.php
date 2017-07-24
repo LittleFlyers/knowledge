@@ -52,7 +52,7 @@ class Experience{
 		$Ex_Answer = db('experience_answer');
 		$emap1['answer'] = $answer;
 		$emap1['user_id'] = $exp_user_id;
-		$emap1['experience_id'] = $Experience_list['experience_id'];
+		$emap1['experience_id'] = 2;
         $emap1['create_date'] = date('Y-m-d G:i:s');
 		$Ex_Answer->insert($emap1);
         $result['err_code'] = 0;
