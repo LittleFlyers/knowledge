@@ -24,7 +24,17 @@ class Experience{
 	//获取单个经验
 	public function one()
 	{
-		
+		$experience_id = intval(input('post.experience_id'));
+
+        $EducationBackground = db('experience_answer');
+        $emap['experience_id'] = $experience_id;
+        $theData = $EducationBackground->where($emap)->find();
+
+        $result['err_code'] = 0;
+        $result['err_msg'] = 'ok';
+        $result['data'] = $theData;
+
+        return $result;
 	}
 	//回答经验
 	public function answer()
