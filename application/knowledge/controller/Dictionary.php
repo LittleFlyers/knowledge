@@ -35,7 +35,7 @@ class Dictionary{
 
 		$Dw = db('dictionary');
 		$emap['word'] = $word;
-		$emap['explain'] = $explain;
+		$emap['word_explain'] = $explain;
 		$emap['type'] = $type;
 		$Dw->insert($emap);
 		$result['err_code'] = 0;
