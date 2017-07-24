@@ -5,7 +5,21 @@ class Dictionary{
 	//获取词典中全部的信息
 	public function all()
 	{
-		
+	   $Meeting = db('dictionary');
+        $meeting_list = $Meeting->select();
+        if($meeting_list)
+        {
+            $result['err_code'] = 0;
+            $result['err_msg'] = 'ok';
+            $result['data'] = $meeting_list;
+        }
+        else
+        {
+            $result['err_code'] = 1;
+            $result['err_msg'] = '暂无';
+        }
+
+        return json_encode($result);
 	}
 	//获取词典中的单个词条
 	public function one()

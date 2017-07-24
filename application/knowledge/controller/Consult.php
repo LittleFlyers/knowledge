@@ -1,23 +1,28 @@
 <?php
 namespace app\knowledge\controller;
 
-class Library{
-	//获取文库中全部的信息
+class Consult{
+	//获取咨询中的全部信息
 	public function all()
 	{
 		
 	}
-	//获取文库中的单个文件
+	//获取咨询中详细信息
 	public function one()
 	{
 		
 	}
-	//向文库中上传文件
+    //添加咨询
 	public function add()
 	{
 		
 	}
-    //删除文件
+	//回答咨询
+	public function answer()
+	{
+		
+	}
+    //删除咨询
 	public function delete()
 	{
 		

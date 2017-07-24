@@ -1,23 +1,27 @@
 <?php
 namespace app\knowledge\controller;
 
-class Library{
-	//获取文库中全部的信息
+class Questions{
+	//获取题库中的全部信息
 	public function all()
 	{
 		
 	}
-	//获取文库中的单个文件
+	//获取题库中单个题目
 	public function one()
 	{
 		
 	}
-	//向文库中上传文件
+	//向题库中添加题目
 	public function add()
 	{
 		
 	}
-    //删除文件
+	public function updata()
+	{
+		
+	}
+    //删除题目
 	public function delete()
 	{
 		
