@@ -47,10 +47,12 @@ class Experience{
 		$emap['type'] = $type;
         $emap['create_date'] = date('Y-m-d G:i:s');
         $Experience->insert($emap);
+		
         $Experience_list = $Experience->where($emap['create_date'])->find();
 		$Ex_Answer = db('experience_answer');
 		$emap1['answer'] = $answer;
 		$emap1['user_id'] = $exp_user_id;
+		$emap1['experience_id'] = $Experience_list['experience_id'];
         $emap1['create_date'] = date('Y-m-d G:i:s');
 		$Ex_Answer->insert($emap1);
         $result['err_code'] = 0;
