@@ -24,7 +24,19 @@ class Dictionary{
     //获取词典中的单个词条
     public function one()
     {
-         
+        // $word_id = input('post.word_id');
+         $word_id = 61;
+		 $D = db('dictionary');
+		 $Wi = db('word_img');
+		 $check('$word_id') = $word_id;
+		 $m_list = $D->where($check)->select();
+
+		 $s_list = $Wi->where($check)->select();
+		 $result['err_code'] = 0;
+		 $result['mcontent'] = $m_list;
+		 $result['scontent'] = $s_list;
+		 
+		 return json_encode($result);
     }
     //向词典中添加词条
     public function add()
