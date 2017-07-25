@@ -52,6 +52,7 @@ class Dictionary{
         $info = $file->move('C:\xampp\htdocs\InterviewAdd\public\uploads');
         if($info){
             $result['err_msg'] = 'ok';
+			$result['img_name'] = $info->getFilename();
         }else{
             $result['err_msg'] = 'failt';
         }
