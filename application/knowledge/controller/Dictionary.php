@@ -51,6 +51,7 @@ class Dictionary{
     //接收词条图片
     public function load()
     {
+		
         $file = request()->file('img');
 		$word_id = input('post.word_id');
 		$explain = input('post.explain');
@@ -61,9 +62,9 @@ class Dictionary{
         if($info){
             
 			$img = $info->getFilename();
-			$img = 'C:\xampp\htdocs\InterviewAdd\public\uploads'.'\\'.$img;
+			$img_url = $info->getSaveName.$img;
 			$WI = db('word_img');
-			$emap['img_url'] = $img;
+			$emap['img_url'] = $img_url;
 			$emap['word_explain'] = $explain;
 			$emap['word_id'] = $word_id;
 			$emap['i'] = $i;
