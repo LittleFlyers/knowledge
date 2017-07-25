@@ -29,17 +29,19 @@ class Dictionary{
     //向词典中添加词条
     public function add()
     {
-        /*$word = input('post.word');
+		$Dw = db('dictionary');
+        $word = input('post.word');
         $type = input('post.type');
         $explain = input('post.explain');
  
-        $Dw = db('dictionary');
+        
         $emap['word'] = $word;
         $emap['word_explain'] = $explain;
         $emap['type'] = $type;
 		$emap['create_data'] = date('Y-m-d G:i:s');
-        $Dw->insert($emap);*/
-	    $list = $Dw->field('word_id')->limit(1)->where("word_id == 6")->find();
+        $Dw->insert($emap);
+		$exx['create_data']=$emap['create_data'];
+	    $list = $Dw->field('word_id')->limit(1)->where($exx)->find();
           $result['err_code'] = 0;
           $result['err_msg'] = $list;
         
