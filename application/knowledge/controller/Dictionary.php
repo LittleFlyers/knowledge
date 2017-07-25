@@ -24,8 +24,8 @@ class Dictionary{
     //获取词典中的单个词条
     public function one()
     {
-        // $word_id = input('post.word_id');
-         $word_id = 61;
+         $word_id = input('post.word_id');
+         //$word_id = 61;
 		 $D = db('dictionary');
 		 $Wi = db('word_img');
 		 $check['word_id'] = $word_id;
