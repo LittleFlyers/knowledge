@@ -61,12 +61,18 @@ class Dictionary{
         if($info){
             
 			$img = $info->getFilename();
+<<<<<<< HEAD
 			$img = 'C:\xampp\htdocs\InterviewAdd\public\uploads'.'\\'.$img;
 			$WI = db('word_img');
 			$emap['img_url'] = $img;
 			$emap['word_explain'] = $explain;
 			$emap['word_id'] = $word_id;
 			$emap['i'] = $i;
+=======
+			$img += 'C:\xampp\htdocs\InterviewAdd\public\uploads';
+			$WI = db('word_img');
+			$emap['img_url'] = $img;
+>>>>>>> 1fc3554319bcad07c0dadfb2fa2f8c2e03fcb3e6
             $WI->insert($emap);
 			$result['err_code'] = 0;
 			$result['err_msg'] = 'ok';
