@@ -237,9 +237,9 @@ class Basic
             $result['err_code'] = 0;
             $result['err_msg'] = 'ok';
 
-            return $result;
+            return json_encode($result);
         }else{
-            return ['error'=>'Unsupport GET request!'];
+            return json_encode(['error'=>'Unsupport GET request!']);
         }
     }
 
