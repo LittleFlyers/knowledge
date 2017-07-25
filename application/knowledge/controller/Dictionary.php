@@ -43,6 +43,11 @@ class Dictionary{
         return json_encode($result);
 		
 	}
+	//接收词条图片
+	public function load()
+	{
+         
+	}
 	//更新词条
 	public function update()
 	{
