@@ -57,7 +57,7 @@ class Dictionary{
 		$i = input('post.i');
      
         // 移动到框架应用根目录/public/uploads/ 目录下
-        $info = $file->move('C:\xampp\htdocs\InterviewAdd\public\uploads');
+        $info = $file->move(ROOT_PATH . 'public' . DS . 'uploads');
         if($info){
             
 			$img = $info->getFilename();
