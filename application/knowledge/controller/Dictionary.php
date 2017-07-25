@@ -52,7 +52,7 @@ class Dictionary{
     public function load()
     {
         $file = request()->file('img');
-		$word_id = input('post.word_id');
+		$word_id = input('post.formData');
      
         // 移动到框架应用根目录/public/uploads/ 目录下
         $info = $file->move('C:\xampp\htdocs\InterviewAdd\public\uploads');
