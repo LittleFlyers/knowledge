@@ -61,7 +61,7 @@ class Dictionary{
         if($info){
             
 			$img = $info->getFilename();
-			$img += 'C:\xampp\htdocs\InterviewAdd\public\uploads'
+			$img += 'C:\xampp\htdocs\InterviewAdd\public\uploads';
 			$WI = db('word_img');
 			$emap['img_url'] = $img;
             $WI->insert($emap);
