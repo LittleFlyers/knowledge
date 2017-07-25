@@ -28,7 +28,7 @@ class Dictionary{
          $word_id = 61;
 		 $D = db('dictionary');
 		 $Wi = db('word_img');
-		 $check('word_id') = $word_id;
+		 $check['word_id'] = $word_id;
 		 $m_list = $D->where($check)->select();
 
 		 $s_list = $Wi->where($check)->select();
