@@ -37,15 +37,11 @@ class Dictionary{
         $emap['word'] = $word;
         $emap['word_explain'] = $explain;
         $emap['type'] = $type;
-		$emap['create_date'] = date('Y-m-d G:i:s');
-        $success = $Dw->insert($emap);
-		if($success){
+		$emap['create_data'] = date('Y-m-d G:i:s');
+        $Dw->insert($emap);
+	
           $result['err_code'] = 0;
           $result['err_msg'] = 'ok';
-		}else{
-		  $result['err_code'] = 1;
-          $result['err_msg'] = '失败';
-		}
         
         return json_encode($result);
          
