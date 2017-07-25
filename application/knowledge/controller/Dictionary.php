@@ -46,7 +46,16 @@ class Dictionary{
 	//接收词条图片
 	public function load()
 	{
-         
+        $file = request()->file('img');
+    
+        // 移动到框架应用根目录/public/uploads/ 目录下
+        $info = $file->move(ROOT_PATH . 'public' . DS . 'uploads');
+        if($info){
+            $result['err_msg'] = 'ok'
+        }else{
+            $result['err_msg'] = 'failt'
+        }
+		return json_encode($result);
 	}
 	//更新词条
 	public function update()
