@@ -52,11 +52,12 @@ class Dictionary{
     public function load()
     {
         $file = request()->file('img');
+		$word_id = input('post.word_id');
      
         // 移动到框架应用根目录/public/uploads/ 目录下
         $info = $file->move('C:\xampp\htdocs\InterviewAdd\public\uploads');
         if($info){
-            $result['err_msg'] = 'ok';
+            $result['err_msg'] = $word_id;
 			$result['img_name'] = $info->getFilename();
         }else{
             $result['err_msg'] = 'failt';
